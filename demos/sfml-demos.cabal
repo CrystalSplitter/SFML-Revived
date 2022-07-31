@@ -1,6 +1,6 @@
+cabal-version: 3.6
 name: sfml-demos
-version: 0.1.0.0
-cabal-version: >=1.8
+version: 0.2.0.0
 build-type: Simple
 license: MIT
 license-file: "LICENSE"
@@ -9,55 +9,49 @@ category: Game
 author: Marc Sunet
 data-dir: assets
 data-files:         DST-BreakOut.ogg, Haskell-Logo.png, Vera.ttf
+
+common shared
+    build-depends:      base == 4.*
+                        , SFML == 2.5.0.0
+    buildable:          True
+    default-language:   Haskell2010
+    ghc-options:        -debug
+    
  
 executable sfml-window
-    hs-source-dirs:     window
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
-    buildable:          True
-    ghc-options:        -debug
+    hs-source-dirs:     window
 
 executable sfml-time
-    hs-source-dirs:     time
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
-    buildable:          True
-    ghc-options:        -debug
+    hs-source-dirs:     time
 
 executable sfml-transform
-    hs-source-dirs:     transform
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
-    buildable:          True
-    ghc-options:        -debug
+    hs-source-dirs:     transform
 
 executable sfml-hello
-    hs-source-dirs:     hello
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
+    hs-source-dirs:     hello
     other-modules:      Paths_sfml_demos
-    buildable:          True
-    ghc-options:        -debug
 
 executable sfml-events
-    hs-source-dirs:     events
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
+    hs-source-dirs:     events
     other-modules:      Paths_sfml_demos
-    buildable:          True
-    ghc-options:        -debug
 
 executable sfml-unicode
-    hs-source-dirs:     unicode
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
+    hs-source-dirs:     unicode
     other-modules:      Paths_sfml_demos
-    buildable:          True
-    ghc-options:        -debug
 
 executable sfml-fingerpaint
-    hs-source-dirs:     fingerpaint
-    build-depends:      base, SFML
+    import: shared
     main-is:            main.hs
-    buildable:          True
-    ghc-options:        -debug
+    hs-source-dirs:     fingerpaint

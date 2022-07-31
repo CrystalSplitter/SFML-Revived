@@ -1,8 +1,9 @@
+cabal-version:       3.6
 name:                SFML
-version:             2.3.2.4
+version:             2.5.0.0
 synopsis:            SFML bindings
 description:
-    Low level bindings for SFML 2.3.2.
+    Low level bindings for SFML 2.5.0
 license:             MIT
 license-file:        LICENSE
 author:              Marc Sunet
@@ -11,7 +12,6 @@ homepage:            https://github.com/jeannekamikaze/SFML
 bug-reports:         https://github.com/jeannekamikaze/SFML/issues
 category:            Game
 build-type:          Simple
-cabal-version:       >=1.8
 
 source-repository head
   type:     git
@@ -131,12 +131,9 @@ library
       cbits/SFML/Window/Window_helper.c
 
   build-depends:
-      base > 4 && < 5
+      base == 4.*
 
-  build-tools:
-      hsc2hs -any
-
-  extensions:
+  default-extensions:
       ForeignFunctionInterface
       DeriveDataTypeable
 
